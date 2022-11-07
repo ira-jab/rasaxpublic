@@ -1,0 +1,90 @@
+version: "3.1"
+
+stories:
+ 
+- story: out of scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+  - intent: offer help
+  - action: utter_offer_help
+  
+- story: help ok
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask help
+  - action: utter_offer_help
+  - intent: affirm
+  - action: utter_options
+  - action: utter_did_it_help
+  - intent: affirm
+  - action: utter_ok
+  - action: utter_offer_more_help
+  - intent: deny
+  - action: utter_goodbye
+  
+- story: help no ok
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask help
+  - action: utter_offer_help
+  - intent: deny
+  - action: utter_no_ok  
+  - action: utter_goodbye  
+
+- story: greet + info
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_offer_help
+
+- story: good servicio 1
+  steps:
+  - intent: stop
+  - intent: did it help
+  - action: utter_did_it_help
+  - intent: affirm
+  - action: utter_ok
+  - action: utter_thank
+  - action: utter_offer_more_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: good servicio 2
+  steps:
+  - intent: stop
+  - intent: did it help
+  - action: utter_did_it_help
+  - intent: affirm
+  - action: utter_ok
+  - action: utter_thank
+  - action: utter_offer_more_help
+  - intent: affirm
+  - action: utter_options 
+
+- story: bad servicio 1
+  steps:
+  - intent: stop
+  - intent: did it help
+  - action: utter_did_it_help
+  - intent: deny
+  - action: utter_no_ok  
+  - action: utter_offer_more_help
+  - intent: deny
+  - action: utter_goodbye
+  
+- story: bad servicio 2
+  steps:
+  - intent: stop
+  - intent: did it help
+  - action: utter_did_it_help
+  - intent: deny
+  - action: utter_no_ok  
+  - action: utter_offer_more_help
+  - intent: affirm
+  - action: utter_offer_human
+  - intent: affirm
+  - action: utter_change_to_human
+  - action: utter_goodbye  

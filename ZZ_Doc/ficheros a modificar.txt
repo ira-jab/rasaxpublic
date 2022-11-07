@@ -1,0 +1,22 @@
+hdldeusG67891 
+
+test/test_stories.yml:
+	- añadir las historias precargadas
+	- probarlas en rasa-x
+
+
+nlu.yml: 
+	- cambiar textos a idiomas adecuados
+	- aumentar diccionario de términos
+	
+rules.yml: 
+	- definimos las reglas que no van a cambiar nunca.
+	
+stories.yml:
+	- definimos las historias que sabemos de antemano
+	
+actions.py:
+	- definimos acciones (copiado de otro)
+	- Donde se indican en RASA x?
+	
+	

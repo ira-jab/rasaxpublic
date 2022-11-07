@@ -1,0 +1,150 @@
+version: "3.1"
+nlu:
+
+- intent: thank
+  examples: |
+    - gracias
+    - muchas gracias
+    
+- intent: stop
+  examples: |
+    - fin
+    - es todo
+    - ya esta
+    - ya está
+    - suficiente
+    - stop
+    - basta    
+    
+- intent: greet
+  examples: |
+    - hola hola
+    - hola
+    - buenos días
+    
+- intent: goodbye
+  examples: |
+    - hasta luego
+    - adiós
+    - que tenga un buen día
+    
+    
+- intent: offer help
+  examples: |
+    - ¿En qué puedo ayudarle?
+    - ¿Qué le ocurre?
+    - ¿Qué necesita?
+    - Puedo ayudarle con su problema. \nPuede pedirme cosas como: \n- Solicito atención médica urgente en mi domicilio \n- Necesito acudir a urgencias \n- ¿Cuál es el mejor momento para acudir a Urgencias y no esperar? \n- ¿Mi problema es urgente?
+
+- intent: offer more help
+  examples: |
+    - ¿En que más puedo ayudarle?
+    - ¿Qué más necesita?
+    - ¿Necesita alguna otra cosa?
+    - ¿Necesita alguna otra cosa?. \nPuede pedirme cosas como: \n- Solicito atención médica urgente en mi domicilio \n- Necesito acudir a urgencias \n- ¿Cuál es el mejor momento para acudir a Urgencias y no esperar? \n- ¿Mi problema es urgente?
+    
+- intent: bot challenge
+  examples: |
+    - eres un bot?
+    - eres un humano?
+    - eres una IA?
+    - eres una inteligencia artificial?
+    - eres humano?
+    - estoy hablando con un robot?
+    - estoy hablando con un humano?
+    - eres real?  
+    
+- intent: greet + info
+  examples: |
+    - hola, ¿puedo ayudarle?
+    - hola, ¿en qué puedo ayudarle?
+    - hola, ¿qué necesita?
+    - buenos días, ¿qué le ocurre?
+    - Buenos días, puedo ayudarle con su problema. \nPuede pedirme cosas como: \n- Solicito atención médica urgente en mi domicilio \n- Necesito acudir a urgencias \n- ¿Cuál es el mejor momento para acudir a Urgencias y no esperar? \n- ¿Mi problema es urgente?
+  
+- intent: ask help
+  examples: |
+    - no me encuentro bien
+    - me encuentro mal
+    - necesito un médico
+    - necesito ayuda
+    - me duele la cabeza
+    - no me siento bien
+    - cual es el mejor momento para ir a Urgencias?
+    - necesito ir a Urgencias
+    - estoy enfermo
+    - socorro
+    - creo que tengo un infarto
+    - me parece que estoy sufriendo un ictus
+    - me he puesto de parto
+    - me han apuñalado
+    - he sufrido un accidente
+    - he tenido un golpe con el coche
+    - me he caido en casa
+    - me he caido en la calle
+    - me han golpeado
+    - me han dado una paliza
+    - creo que tengo una hemorragia
+    - tengo un dolor en
+    - me duele 
+    - tengo palpitaciones
+    - tengo fiebre
+    
+- intent: affirm
+  examples: |
+    - si
+    - claro
+    - por su puesto
+    - correcto
+    - seguro
+    
+- intent: deny
+  examples: |
+    - no
+    - para nada
+    - no puede ser
+    - no lo creo
+    - no realmente
+    - creo que no
+    
+- intent: out of scope
+  examples: |
+    - quiero una pizza
+    - quiero un taxi
+    - quiero una hamburguesa
+    
+- intent: ask for human
+  examples: |
+    - necesito un humano
+    - ayuda de persona
+    - no quiero un bot
+    - no quiero un robot
+    
+- intent: did it help
+  examples: |
+    - ¿Esto le ha ayudado?
+    - ¿Mi ayuda ha sido de utilidad?
+    
+- intent: great
+  examples: |
+    - Genial
+    - Me alegro   
+    
+- intent: no great
+  examples: |
+    - Lo siento
+    - Lo lamento
+    - Me entristece oir eso
+    
+- intent: great + welcome
+  examples: |
+    - Genial, ha sido un placer
+    - Me alegro, ha sido un placer       
+    
+- intent: no great + offer more help
+  examples: |
+    - Lo siento, ¿puedo ayudarle en algo más?
+    - Lo lamento, ¿puedo intentar ayudarle en algo más?
+    - Me entristece oir eso, ¿puedo ayudarle en algo más?
+    
+  

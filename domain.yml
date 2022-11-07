@@ -1,0 +1,105 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - great
+  - no great
+  - great + welcome
+  - bot challenge
+  - ask help
+  - thank
+  - stop
+  - greet + info
+  - out of scope
+  - ask for human
+  - nlu fallback
+  - offer help
+  - did it help
+  
+responses:
+
+  utter_did_it_help:
+  - text: "¿Le he ayudado con su problema?"
+  - text: "¿He aportado alguna solución?"
+ 
+  utter_offer_human:
+  - text: "¿Desea contactar con una persona?"
+  
+  utter_change_to_human:
+  - text: "Espere que trato de transferir su conversación..."
+  
+  utter_ask_rephrase:
+  - text: "Creo que no he entendido eso, ¿Puede rehacer la pregunta?"
+
+  utter_ask_continue:
+  - text: "¿Desea continuar?"
+  
+  utter_greet:
+  - text: "hola"
+  - text: "hola, ¿cómo está?"
+  - text: "buenos días"
+
+  utter_goodbye:
+  - text: "Adiós"
+  - text: "Hasta luego"
+  - text: "Buenos días"
+  - text: "que tenga un buen día"
+
+  utter_iamabot:
+  - text: "Soy una Inteligencia Artificial a su disposición."
+  - text: "Soy un bot diseñado para ayudarle"
+  
+  utter_default:
+  - text: "Perdone, creo que no le he entendido. ¿Puede reformular la pregunta?"
+
+  utter_out_of_scope:
+  - text: "Perdone, en eso no puedo ayudarle. ¿Puede reformular la pregunta?"
+  
+  utter_offer_help:
+  - text: "¿Puedo ayudarle con su problema?"
+  - text: "¿Qué le ocurre?"
+  - text: "¿En qué puedo ayudarle?"
+  
+  utter_offer_more_help:
+  - text: "¿En que más puedo ayudarle?"
+  - text: "¿Qué más necesita?"
+  - text: "¿Necesita alguna otra cosa?"
+  
+  utter_options:
+  - text: "Puede pedirme cosas como: \n- Solicito atención médica urgente en mi domicilio \n- Necesito acudir a urgencias \n- ¿Cuál es el mejor momento para acudir a Urgencias y no esperar? \n- ¿Mi problema es urgente?"
+    
+  utter_welcome:
+  - text: De nada!
+  - text: ha sido un placer...
+  - text: De nada, un placer :)
+  
+  utter_ok:
+  - text: 👍  
+  - text: Perfecto
+  - text: me alegro mucho
+  - text: genial
+  
+  utter_no_ok:
+  - text: qué lástima  
+  - text: lo siento
+  - text: lo lamento
+
+  utter_thank:
+  - text: muchas gracias  
+  - text: gracias, un placer
+  
+
+slots:
+  confirm_option:
+    type: any
+    initial_value: null
+    mappings:
+     - type: from_text
+
+        
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

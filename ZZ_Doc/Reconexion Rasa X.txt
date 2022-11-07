@@ -1,0 +1,129 @@
+1- Abrir docker, logearse y comprobar que está conectado.
+
+2- Ejecutar:
+	minikube delete --all --> en docker si ha desparecido el container llamado minikube
+
+3- Ejecutar:
+	minikube start --kubernetes-version=v1.23.10 
+
+4- Actualizar  c:\rasa-x\values.yml si procede
+	
+5-  ir a la carpeta c:\rasax en el powershell
+
+6-  ./helm repo update
+
+7-  kubectl create namespace rasax 
+
+8- ./helm install --generate-name --namespace rasax --values values.yml rasa-x/rasa-x
+
+9- kubectl config set-context --current --namespace=rasax
+
+10- Copiar el archivo kubectl.exe que hay en la carpeta c:\rasax
+    en la ruta: C:\Program Files\Docker\Docker\resources\bin
+
+11- Ejecutar:
+	kubectl get pods
+		deben salir los pods de kube
+		
+
+
+x- Ir a la carpeta de rasa-x\ en el mismo PowerShell:
+	cd..
+	cd..
+	cd c:\rasa-x
+	
+x- Ejecutar:
+		./helm repo add rasa-x https://rasahq.github.io/rasa-x-helm 
+	si ya existe el repositorio da mensaje y ya está
+	
+x- Instalar Rasa-x en ese repositorio:
+		./helm install --generate-name --values values.yml rasa-x/rasa-x	
+		
+x- Ejecutar:
+	kubectl get pods 
+		y a esperar un buen rato:
+			- comprobamos que están todos los pods necesarios: worker, prod, rasa, rasa-x
+			- y que se quedan Running con state = 1
+		se puede ver el avance ejecutando de nuevo la instruccion kubectl get pods 
+
+12- Ejecutar en otro PowerShell, que se deja sin cerrar: 
+		minikube tunnel
+		
+13- Localizamos pod de rasa x
+		kubectl get pod -l app.kubernetes.io/component=rasa-x	
+		
+14- Volvemos al otro PowerShell:
+	Visualizamos pods y localizamos el de rasa-x
+	kubectl exec -it PONER_AQUI_EL NOMBRE_DE_POD_RASA_X bash 
+
+	kubectl exec -it rasa-x-1667465278-rasa-x-6b65564757-778xk bash 
+
+
+	
+15-	Ejecutamos:
+	python scripts/manage_users.py create --update admin pass admin 
+
+hdldeusG67891 
+	
+16- Vamos a la URL en la que se despliega Rasa-x. Sabe con:
+	kubectl get services
+	
+17- Vamos a la URL de rasa x y nos logeamos. 127.0.0.1:8000
+
+18- Descargamos un modelo de los que tenemos.El fichero acaba en .tar o .tar.gz
+		Si todo va bien, ya podemos trabajar con el modelo.
+
+19- Vamos a la barra de la izquierda y pulsamos sobre:
+	'models'
+
+20- Nos sale una lista con los que tenemos. Pulsamos en la fecha hacia arriba:
+	'make model active'
+	
+21- Arriba a la derecha vemos el botón de 'Configure Environments'
+	Comprobamos que se están usando los dos.
+		
+	
+
+------------------------------------
+ACCEDER A LO INSTALADO ANTERIORMENTE
+------------------------------------
+1- Abrir Docker y conectarse
+
+2- En un PowerShell como Admin
+
+	minikube start --kubernetes-version=v1.23.10
+3- Entramos en nuestro namespace
+	kubectl config set-context --current --namespace=rasax
+4- 
+	kubectl get pods
+	
+	Comprobar el avance: 
+
+5- En otro como Admin
+	
+	minikube tunnel
+
+6- Después de esto: Acceder a 127.0.0.1:8000 cuando se acaben de cargar los pods.
+	Para saber la URL a la que acceder ponemos en el PowerShell de los pods: kubectl get services
+
+hdldeusG67891 
+
+7- Conectarse con admin/hdldeusG6789 
+
+8- Conectarse a un modelo desde file
+
+9- Conectarse a repositorio de GitHub
+
+10- Para usar insomnia:
+	docker-compose up 
+
+    nos activa relaciones los contenedores necesarios que nos permiten acceder al bot con:
+
+	http://localhost:5005/webhooks/rest/webhook
+	
+
+----------------------------
+LINKS par ahablar con RASA
+----------------------------
+https://rasa.com/blog/webkitspeechrecognition-and-rasa/
+https://chatbotslife.com/the-ultimate-rasa-cheatsheet-925f8980d51b

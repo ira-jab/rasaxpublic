@@ -1,0 +1,4 @@
+- falla al entrenar
+- falla al talk to your bot??
+* si:no se pueden actualizar los ficheros: ej: stories.yml
+- no puedo grabar los cambios en mi directorio de modelo

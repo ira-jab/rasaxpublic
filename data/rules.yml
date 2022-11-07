@@ -1,0 +1,42 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot challenge
+  - action: utter_iamabot
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu fallback
+  - action: utter_default
+
+- rule: answer bot challenge
+  steps:
+  - intent: bot challenge
+  - action: utter_iamabot
+  
+- rule: answer offer when ask help
+  steps:
+  - intent: ask help
+  - action: utter_offer_help
+  
+- rule: switch to human
+  steps:
+  - intent: ask for human
+  - action: utter_change_to_human
+  
+- rule: thank
+  steps:
+  - intent: thank
+  - action: utter_welcome
+  
+  
+  
+    
